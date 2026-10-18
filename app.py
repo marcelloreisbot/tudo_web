@@ -1,37 +1,57 @@
 # Pesquisa de Satisfação - TudoWeb
 # Marcello Reis de Campos Melo
 
-print("=== PESQUISA DE SATISFAÇÃO - TUDOWEB ===")
+print("PESQUISA DE SATISFAÇÃO - TUDOWEB")
 
-# Entrada de dados
-nome = input("Digite seu nome: ")
-idade = int(input("Digite sua idade: "))
-print("\nComo você avalia nosso atendimento?")
-print("1 - Excelente")
-print("2 - Bom")
-print("3 - Ruim")
-opiniao = int(input("Escolha uma opção e confirme: "))
+excelente = 0
+bom = 0
+ruim = 0
 
-# Processamento
-while opiniao not in (1, 2, 3):
-    print("Sua opinião é muito importante!")
+continuar = "S"
 
+while continuar.upper() == "S":
 
-opiniao = int(input("Escolha uma opção: 1, 2 ou 3: "))
+    # Entrada de dados
+    nome = input("Digite seu nome: ")
+    idade = int(input("Digite sua idade: "))
 
+    print("\nComo você avalia nosso atendimento?")
+    print("1 - Excelente")
+    print("2 - Bom")
+    print("3 - Ruim")
 
-if opiniao == 1:
-    avaliacao = "Excelente"
+    opiniao = int(input("Escolha uma opção e confirme: "))
 
-elif opiniao == 2:
-    avaliacao = "Bom"
+    # Validação da resposta
+    while opiniao not in (1, 2, 3):
+        print("Sua opinião é muito importante!")
+        opiniao = int(input("Escolha uma opção: 1, 2 ou 3: "))
 
-else:
-    avaliacao = "Ruim"
+    # Processamento
+    if opiniao == 1:
+        avaliacao = "Excelente"
+        excelente += 1
 
-#Saída
-print("\n=== RESUMO DA PESQUISA ===")
-print(f"Nome: {nome}")
-print(f"Idade: {idade} anos")
-print(f"Avaliação: {avaliacao}")
-print("Agradecemos pela sua contribuição!")
+    elif opiniao == 2:
+        avaliacao = "Bom"
+        bom += 1
+
+    else:
+        avaliacao = "Ruim"
+        ruim += 1
+
+    # Saída individual
+    print("\n=== RESUMO DA PESQUISA ===")
+    print(f"Nome: {nome}")
+    print(f"Idade: {idade} anos")
+    print(f"Avaliação: {avaliacao}")
+    print("Agradecemos pela sua contribuição!")
+
+    continuar = input("\nDeseja cadastrar outra resposta? (S/N): ")
+
+# Resultado final
+print("\n=== RESULTADO FINAL DA PESQUISA ===")
+print(f"Excelente: {excelente}")
+print(f"Bom: {bom}")
+print(f"Ruim: {ruim}")
+print(f"Total de respostas: {excelente + bom + ruim}")
