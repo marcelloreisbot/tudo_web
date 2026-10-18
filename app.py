@@ -41,7 +41,7 @@ while continuar.upper() == "S":
         ruim += 1
 
     # Saída individual
-    print("\n=== RESUMO DA PESQUISA ===")
+    print("\nRESUMO DA PESQUISA")
     print(f"Nome: {nome}")
     print(f"Idade: {idade} anos")
     print(f"Avaliação: {avaliacao}")
@@ -50,8 +50,7 @@ while continuar.upper() == "S":
     continuar = input("\nDeseja cadastrar outra resposta? (S/N): ")
 
 # Resultado final
-print("\n=== RESULTADO FINAL DA PESQUISA ===")
+print("\nRESULTADO FINAL DA PESQUISA")
 print(f"Excelente: {excelente}")
-print(f"Bom: {bom}")
 print(f"Ruim: {ruim}")
 print(f"Total de respostas: {excelente + bom + ruim}")
